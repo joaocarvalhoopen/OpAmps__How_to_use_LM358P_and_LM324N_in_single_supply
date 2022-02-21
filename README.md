@@ -58,7 +58,7 @@ Then it will generate a PWM for each sample controlled by a timer, and set's the
 
 ### Important Notes
 
-The 12 bit's ADC from the Pico, 4096 values will be from 0V to 3.3 V, equally spaced. But with a "common" electret microphone it will put out 5 mVpp Pk to Pk and with a gain of x100 we will have 500 mVpp at normal speaking volume at 20 cm from the microphone. So the rang of values in each sample will normally be between 0 and 620. But because we will be processing with a FFT buffer that will not be a problem to detect and process those whistles. FFT will give a kind of improved resolution for each buffer of 4096 samples, because a pure tone and whistles kinds of makes a signal synchronized average to correspond to a higher resolution.
+The 12 bit's ADC from the Pico, 4096 values will be from 0 V to 3.3 V, equally spaced. But with a "common" electret microphone it will put out 5 mVpp Pk to Pk and with a gain of x100 we will amplify to 500 mVpp (centered at VRef or Vin offset) at normal speaking volume at 20 cm from the microphone. So the range of values in each sample will normally be between 0 and 620. But because we will be processing with a FFT buffer that will not be a problem to detect and process those whistles. FFT will give a kind of improved resolution for each buffer of 4096 samples, because a pure tone and whistles kinds of make a signal synchronized average it will correspond to a higher resolution, with the FFT we get that as a bonus.
 
 # License
 MIT Open Source license
